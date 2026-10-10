@@ -774,9 +774,11 @@ def main():
         robots += f"Sitemap: {url}/sitemap.xml\n"
     write("robots.txt", robots)
 
-    missing = [k for k in ("whatsapp", "whatsapp_display", "email", "instagram", "street", "cnpj", "cadastur", "url") if not SITE[k]]
+    # Only the fields the site cannot work without are reported. The optional ones
+    # (email, instagram, cnpj, cadastur) are left out of the pages when empty.
+    missing = [k for k in ("whatsapp", "url") if not SITE[k]]
     if missing:
-        print("\nNot set in tools/content.py (hidden on the site until filled in): " + ", ".join(missing))
+        print("\nRequired and not set in tools/content.py: " + ", ".join(missing))
 
 
 if __name__ == "__main__":

@@ -5,22 +5,21 @@ Website of Baía Azul, an agency for passeios and transfers based in the Pelouri
 Static site. No framework, no build step on the server, no cookies, no third party requests.
 Open `index.html` or serve the folder with any static host.
 
-## Before going live
+## Business details
 
 All business facts live at the top of `tools/content.py`, in `SITE`. A value left empty is
-hidden on the site, so nothing invented is ever shown.
+simply not shown on the site.
 
 | Field | What it does | Status |
 |---|---|---|
-| `whatsapp` | Number behind every booking button, digits only (`5571...`) | **Empty. Set this first.** |
-| `whatsapp_display` | The same number as people read it | Empty |
-| `street` | Street and number inside the Pelourinho | Empty |
-| `email`, `instagram` | Shown in the footer and on the contact section | Empty |
-| `cnpj`, `cadastur` | Shown in the footer and the privacy page | Empty |
-| `url` | Public address. Turns on the canonical link, social preview image and `sitemap.xml` | Empty |
+| `whatsapp`, `whatsapp_display` | Number behind every booking button, and how it is displayed | Set |
+| `street` | Location inside the Pelourinho | Set (Shopping do Pelô) |
+| `url` | Public address. Drives the canonical link, social preview image and `sitemap.xml` | Set (GitHub Pages) |
+| `email`, `instagram` | Shown in the footer and contact section when filled in | Left out by choice |
+| `cnpj`, `cadastur` | Shown in the footer and privacy page when filled in | Left out by choice |
 
-While `whatsapp` is empty the booking buttons still open WhatsApp with the message written,
-but the visitor has to choose the contact by hand. After editing, rebuild:
+After editing, rebuild and push. The live site at https://mento-web.github.io/baia-azul/
+is served from the `main` branch.
 
 ```bash
 python3 tools/build.py

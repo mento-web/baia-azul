@@ -32,9 +32,9 @@ SITE = {
     # WhatsApp number in international format, digits only, for example "5571999990000".
     # Every booking button uses it. While it is empty the buttons still open WhatsApp
     # with the message written, but the visitor has to pick the contact by hand.
-    "whatsapp": "557196798039",
+    "whatsapp": "5571996798039",
     # The same number as it should be read by people, for example "+55 71 99999-0000".
-    "whatsapp_display": "+55 (71) 9679-8039",
+    "whatsapp_display": "+55 71 99679-8039",
     "email": "",
     "instagram": "",            # handle without the @
     "street": "Shopping do Pelô",   # street and number inside the Pelourinho
