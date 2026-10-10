@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://mento-web.github.io/baia-azul/sitemap.xml

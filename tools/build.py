@@ -728,7 +728,7 @@ def page_creditos():
 
 
 def page_404():
-    root = "/" if SITE["url"] else ""
+    root = (SITE["url"].rstrip("/") + "/") if SITE["url"] else ""
     body = f"""
 {hero(root, "tinhare-agua", "Erro 404", "Página não encontrada", f'<p class="hero__lede">Esse endereço não existe mais, mas o mar continua no mesmo lugar.</p><a class="btn btn--white btn--large" href="{root}index.html">Ver os passeios</a>', cue=False)}"""
     return page("Página não encontrada", "Página não encontrada.", root, "404.html", "", body, image="tinhare-agua")
