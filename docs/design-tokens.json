@@ -1,0 +1,1158 @@
+{
+  "meta": {
+    "name": "Trilogy Tours listing, design reference for Baia Azul",
+    "source": "https://sailtrilogy.com/tours",
+    "captured": "2026-10-10",
+    "method": "Computed styles read from the live page in Chrome at 1440, 820 and 390 px wide, cross checked against the site stylesheet (app.css).",
+    "units": "px unless stated",
+    "confidence": {
+      "measured": "All values under reference.* come from the live page.",
+      "interpreted": "Token names, the semantic grouping and everything under baiaAzul.* are my own."
+    },
+    "stack": {
+      "cssFramework": "Bulma (customised)",
+      "backend": "Laravel",
+      "fonts": "Google Fonts",
+      "images": "CloudFront and Cloudinary",
+      "booking": "Own booking app injected into the page"
+    },
+    "usage": "Use as a reference. Do not copy the logo, photos, video or text of the source site."
+  },
+  "reference": {
+    "color": {
+      "primitive": {
+        "ink": {
+          "value": "#160D3F",
+          "rgb": "22, 13, 63",
+          "role": "Headings, primary button, select text, dropdown panel"
+        },
+        "inkDeep": {
+          "value": "#0C052A",
+          "rgb": "12, 5, 42",
+          "role": "Page background behind everything (visible on overscroll)"
+        },
+        "teal": {
+          "value": "#306F7F",
+          "rgb": "48, 111, 127",
+          "role": "Footer, hero fallback behind video, secondary button, dropdown hover"
+        },
+        "tealMuted": {
+          "value": "#73A6B2",
+          "rgb": "115, 166, 178",
+          "role": "Body copy, secondary prices, duration, dropdown links, footer dividers"
+        },
+        "tealLight": {
+          "value": "#77B9C9",
+          "rgb": "119, 185, 201",
+          "role": "Small print on the teal footer"
+        },
+        "mist": {
+          "value": "#EAF5F7",
+          "rgb": "234, 245, 247",
+          "role": "Alternating band, sticky bar, tertiary button"
+        },
+        "hairline": {
+          "value": "#CBDFE4",
+          "rgb": "203, 223, 228",
+          "role": "1px rules above and below the price row"
+        },
+        "white": {
+          "value": "#FFFFFF",
+          "role": "Section background, text on dark, tertiary button on mist bands"
+        },
+        "chatBlue": {
+          "value": "#166D98",
+          "role": "Third party chat button (sampled from screenshot)"
+        }
+      },
+      "inStylesheetNotOnThisPage": {
+        "checkoutPanel": "#2E2656",
+        "checkoutText": "#81AFBA",
+        "timeAccent": "#1E9E9F",
+        "error": "#D80000",
+        "coral": "#FB735C",
+        "divider": "#A6C8D0"
+      },
+      "semantic": {
+        "bg.page": "#FFFFFF",
+        "bg.band": "#EAF5F7",
+        "bg.footer": "#306F7F",
+        "bg.menu": "#160D3F",
+        "text.heading": "#160D3F",
+        "text.body": "#73A6B2",
+        "text.onDark": "#FFFFFF",
+        "text.onFooterMuted": "#77B9C9",
+        "action.primary.bg": "#160D3F",
+        "action.primary.text": "#FFFFFF",
+        "action.tertiary.bg.onWhite": "#EAF5F7",
+        "action.tertiary.bg.onBand": "#FFFFFF",
+        "action.tertiary.text": "#160D3F",
+        "border.hairline": "#CBDFE4"
+      },
+      "heroOverlay": {
+        "type": "PNG tint stretched over the video",
+        "color": "rgb(13, 7, 44)",
+        "alphaTop": 0.35,
+        "alphaMiddle": 0.23,
+        "alphaBottom": 0.18,
+        "cssEquivalent": "linear-gradient(to bottom, rgba(13,7,44,.35) 0%, rgba(13,7,44,.23) 50%, rgba(13,7,44,.18) 100%)"
+      },
+      "usageRatio": "Roughly 55% white, 30% mist, 10% photography, 5% ink. Colour comes from the photos, not the interface.",
+      "contrast": [
+        {
+          "pair": "ink on white",
+          "ratio": 18.05,
+          "wcagAA": "pass"
+        },
+        {
+          "pair": "ink on mist",
+          "ratio": 16.25,
+          "wcagAA": "pass"
+        },
+        {
+          "pair": "white on ink",
+          "ratio": 18.05,
+          "wcagAA": "pass"
+        },
+        {
+          "pair": "white on teal",
+          "ratio": 5.67,
+          "wcagAA": "pass"
+        },
+        {
+          "pair": "tealMuted on ink (dropdown)",
+          "ratio": 6.73,
+          "wcagAA": "pass"
+        },
+        {
+          "pair": "tealMuted on white (body copy)",
+          "ratio": 2.68,
+          "wcagAA": "FAIL"
+        },
+        {
+          "pair": "tealMuted on mist (body copy)",
+          "ratio": 2.42,
+          "wcagAA": "FAIL"
+        },
+        {
+          "pair": "tealLight on teal (footer small print)",
+          "ratio": 2.58,
+          "wcagAA": "FAIL"
+        }
+      ]
+    },
+    "typography": {
+      "families": {
+        "display": {
+          "name": "Josefin Sans",
+          "fallback": "'Century Gothic', 'Avenir Next', Futura, sans-serif",
+          "weightsLoaded": [
+            400,
+            700
+          ],
+          "weightUsed": "400 for headings, 500 requested for nav and buttons (renders as 400)",
+          "license": "SIL Open Font License, free on Google Fonts",
+          "character": "Geometric, vintage, low x height. Always set in capitals with wide tracking."
+        },
+        "text": {
+          "name": "Raleway",
+          "fallback": "'Helvetica Neue', Arial, sans-serif",
+          "weightsLoaded": [
+            400,
+            500,
+            700
+          ],
+          "weightUsed": 500,
+          "license": "SIL Open Font License, free on Google Fonts",
+          "character": "Light, elegant. Sentence case, no tracking."
+        }
+      },
+      "rules": [
+        "Display face is always uppercase with 1 to 4.5 px tracking.",
+        "Text face is always sentence case with normal tracking.",
+        "No bold anywhere. Hierarchy comes from size, tracking and colour only.",
+        "Italic is used once, for the word 'free' in the price row."
+      ],
+      "styles": {
+        "heroEyebrow": {
+          "family": "display",
+          "size": {
+            "desktop": 28,
+            "mobile": 17
+          },
+          "lineHeight": {
+            "desktop": 34,
+            "mobile": 20
+          },
+          "letterSpacing": 4.5,
+          "weight": 400,
+          "case": "upper",
+          "color": "#FFFFFF",
+          "align": "center",
+          "maxWidth": 600,
+          "marginBottom": 6
+        },
+        "heroTitle": {
+          "family": "display",
+          "size": {
+            "desktop": 64,
+            "mobile": 42
+          },
+          "lineHeight": {
+            "desktop": 90,
+            "mobile": 52
+          },
+          "letterSpacing": {
+            "desktop": 3,
+            "mobile": 2
+          },
+          "weight": 400,
+          "case": "upper",
+          "color": "#FFFFFF",
+          "align": "center",
+          "maxWidth": 700,
+          "marginBottom": {
+            "desktop": 26,
+            "mobile": 24
+          }
+        },
+        "cardEyebrow": {
+          "family": "display",
+          "size": 17,
+          "lineHeight": "normal (renders 17)",
+          "letterSpacing": 2.8,
+          "weight": 400,
+          "case": "upper",
+          "color": "#160D3F",
+          "marginBottom": 6
+        },
+        "cardTitle": {
+          "family": "display",
+          "size": {
+            "desktop": 34,
+            "mobile": 24
+          },
+          "lineHeight": "normal (renders 35 / 24)",
+          "letterSpacing": 3.5,
+          "weight": 400,
+          "case": "upper",
+          "color": "#160D3F",
+          "marginBottom": 21
+        },
+        "price": {
+          "family": "text",
+          "size": 18,
+          "lineHeight": 30,
+          "letterSpacing": 0,
+          "weight": 500,
+          "color": {
+            "first": "#160D3F",
+            "others": "#73A6B2"
+          }
+        },
+        "body": {
+          "family": "text",
+          "size": 14,
+          "lineHeight": 26,
+          "letterSpacing": 0,
+          "weight": 500,
+          "color": "#73A6B2",
+          "marginBottom": 29
+        },
+        "meta": {
+          "family": "text",
+          "size": 14,
+          "lineHeight": 26,
+          "weight": 500,
+          "color": "#73A6B2",
+          "note": "Duration label, top right of the card"
+        },
+        "note": {
+          "family": "text",
+          "size": 16,
+          "lineHeight": 30,
+          "weight": 500,
+          "color": "#73A6B2",
+          "marginBottom": 8,
+          "note": "Optional extra line such as 'SNUBA Available'"
+        },
+        "button": {
+          "family": "display",
+          "size": {
+            "desktop": 16,
+            "mobile": 14
+          },
+          "lineHeight": {
+            "desktop": 16,
+            "mobile": 14
+          },
+          "letterSpacing": {
+            "desktop": 2.3,
+            "mobile": 2
+          },
+          "weight": 500,
+          "case": "upper"
+        },
+        "navLink": {
+          "family": "display",
+          "size": 14,
+          "lineHeight": 21,
+          "letterSpacing": 1,
+          "weight": 500,
+          "case": "upper",
+          "color": "#FFFFFF"
+        },
+        "select": {
+          "family": "display",
+          "size": 14,
+          "lineHeight": 25,
+          "letterSpacing": 2,
+          "weight": 400,
+          "case": "upper",
+          "color": "#160D3F"
+        },
+        "footerLink": {
+          "family": "display",
+          "size": 14,
+          "lineHeight": {
+            "desktop": 38,
+            "mobile": 26
+          },
+          "letterSpacing": 1,
+          "weight": 500,
+          "case": "upper",
+          "color": "#FFFFFF"
+        },
+        "footerSmall": {
+          "family": "text",
+          "size": 14,
+          "lineHeight": 29,
+          "weight": 500,
+          "color": "#77B9C9",
+          "align": "center",
+          "marginBottom": 29
+        }
+      },
+      "globalHeadingDefaults": {
+        "h1": "82/90, tracking 4.5",
+        "h2": "34, tracking 6.1 (24 on mobile)",
+        "h3": "28/34, tracking 4.5 (17 on mobile)",
+        "h4": "20, teal",
+        "h5": "24, tracking 2.3",
+        "h6": "14, tracking 2.5, teal"
+      },
+      "trackingScale": [
+        1,
+        2,
+        2.3,
+        2.8,
+        3,
+        3.5,
+        4.5
+      ],
+      "sizeScale": [
+        14,
+        16,
+        17,
+        18,
+        24,
+        28,
+        34,
+        42,
+        64
+      ]
+    },
+    "spacing": {
+      "note": "No formal scale in the source. These are the values that recur.",
+      "recurring": [
+        6,
+        13,
+        17,
+        20,
+        21,
+        26,
+        29,
+        33,
+        40,
+        48,
+        50,
+        66,
+        80,
+        100,
+        120
+      ],
+      "sectionPaddingY": {
+        "desktop": 80,
+        "mobile": "10 top, 50 bottom (first card 50 top)"
+      },
+      "pageGutter": {
+        "nav": 48,
+        "cards": {
+          "1440": 120,
+          "tablet": 20,
+          "mobile": "0 for image, 20 for text"
+        },
+        "footer": {
+          "desktop": 33,
+          "mobile": 21
+        }
+      },
+      "columnGap": {
+        "desktop": 66,
+        "tablet": 40
+      }
+    },
+    "radius": {
+      "pill": 100,
+      "image": 0,
+      "card": 0,
+      "chatButton": "50%",
+      "note": "Only two shapes: full pills for anything clickable, hard squares for images and bands."
+    },
+    "shadow": {
+      "select": "0 1px 3px 0 rgba(0,0,0,.12)",
+      "selectFocus": "0 1px 3px 0 rgba(0,0,0,.22)",
+      "stickyBar": "0 1px 8px 0 rgba(22,13,63,.15)",
+      "stickyBarMobile": "0 1px 5px 0 rgba(22,13,63,.15)",
+      "cards": "none",
+      "buttons": "none",
+      "note": "The page is flat. Shadows appear only on floating controls."
+    },
+    "border": {
+      "hairline": "1px solid #CBDFE4",
+      "footerDivider": "1px wide, 20px tall, #73A6B2",
+      "everythingElse": "none"
+    },
+    "motion": {
+      "default": {
+        "duration": "200ms",
+        "easing": "ease-in-out",
+        "properties": "all"
+      },
+      "buttonHover": {
+        "transform": "scale(.96)",
+        "filter": "brightness(.9) contrast(1.2)",
+        "duration": "200ms",
+        "easing": "ease-in-out"
+      },
+      "navLinkHover": {
+        "property": "opacity",
+        "duration": "200ms"
+      },
+      "burger": {
+        "duration": "86ms",
+        "easing": "ease-out",
+        "active": "Top and bottom lines rotate 45 degrees into a cross, middle line fades"
+      },
+      "scrollCue": {
+        "keyframes": "bounce: rest at 0, 11.4, 28.5, 45.7 and 100%. translateY(-30px) at 22.8%. translateY(-15px) at 34.2%.",
+        "duration": "3.5s",
+        "iteration": "infinite"
+      },
+      "heroReveal": "The video layer is position fixed and 700px tall. The white page scrolls up over it like a curtain.",
+      "heroVideo": {
+        "attributes": "autoplay, muted, loop, playsinline, poster",
+        "mobile": "Video hidden under 769px, poster image shown instead"
+      }
+    },
+    "breakpoints": {
+      "mobileMax": 769,
+      "tabletMin": 769,
+      "desktopMin": 1024,
+      "wideMin": 1216,
+      "fullHdMin": 1408,
+      "note": "Bulma defaults. Navigation collapses under 1024. Cards stack under 769."
+    },
+    "layout": {
+      "containers": {
+        "nav": {
+          "maxWidth": 1344,
+          "sideMargin": 48
+        },
+        "cards": {
+          "maxWidth": 1200
+        },
+        "footerText": {
+          "maxWidth": 1120
+        },
+        "social": {
+          "maxWidth": 680
+        }
+      },
+      "pageOrder": [
+        "Transparent navigation over the hero",
+        "Video hero with filter",
+        "Sticky bar (100px mist band)",
+        "Tour cards, one per full width band",
+        "Footer"
+      ],
+      "measuredAt1440": {
+        "pageHeight": 10397,
+        "hero": 600,
+        "stickyBar": 100,
+        "cardHeightRange": [
+          486,
+          538
+        ],
+        "cardCount": 18,
+        "footer": 590
+      }
+    },
+    "components": {
+      "navigation": {
+        "position": "Sits on top of the hero. The bar is 60px tall and the hero is pulled up by 60px so the video shows through.",
+        "background": "transparent",
+        "zIndex": 100,
+        "sticky": false,
+        "logo": {
+          "width": 185,
+          "height": 20,
+          "top": 47,
+          "left": 48,
+          "color": "white",
+          "form": "Row of nautical signal flags, no wordmark",
+          "hover": "Swaps to a second sprite"
+        },
+        "links": {
+          "count": 5,
+          "items": [
+            "Tours (dropdown)",
+            "Our Story",
+            "Shop (dropdown)",
+            "Private Charters",
+            "Contact"
+          ],
+          "style": "typography.navLink",
+          "gap": 26,
+          "baselineFromTop": 55,
+          "alignment": "right"
+        },
+        "bookButtonInNav": false,
+        "dropdown": {
+          "width": 400,
+          "background": "#160D3F",
+          "offsetTop": 40,
+          "padding": "25px 0",
+          "item": {
+            "color": "#73A6B2",
+            "padding": "11px 0 11px 38px",
+            "hoverBackground": "#306F7F",
+            "hoverColor": "#FFFFFF"
+          },
+          "content": "All 13 tours by name, then Private Charters and All Tours"
+        },
+        "mobile": {
+          "below": 1024,
+          "burger": {
+            "lines": 3,
+            "lineWidth": 16,
+            "lineHeight": 1,
+            "lineGap": 5,
+            "color": "#FFFFFF",
+            "hitArea": {
+              "tablet": 72,
+              "mobile": 46
+            }
+          },
+          "panelBackground": "#160D3F",
+          "logoTop": {
+            "tablet": 36,
+            "mobile": 23
+          },
+          "logoLeft": {
+            "tablet": 17,
+            "mobile": 11
+          }
+        }
+      },
+      "hero": {
+        "height": {
+          "desktop": 600,
+          "tablet": 550,
+          "mobile": 420
+        },
+        "media": "Looping video, object-fit cover, max width 1920, fixed position",
+        "fallbackColor": "#306F7F",
+        "overlay": "color.heroOverlay",
+        "content": {
+          "align": "center",
+          "verticalPosition": {
+            "desktop": "exact centre",
+            "mobile": "30% from top"
+          },
+          "stack": [
+            "heroEyebrow",
+            "heroTitle",
+            "filterSelect"
+          ]
+        },
+        "copy": {
+          "eyebrow": "SAIL WITH US",
+          "title": "#1 ON MAUI",
+          "wordCount": 6
+        },
+        "scrollCue": {
+          "icon": "Thin chevron, 29px",
+          "bottom": 30,
+          "animation": "motion.scrollCue",
+          "target": "First section after the hero"
+        }
+      },
+      "filterSelect": {
+        "element": "Native select styled as a pill",
+        "width": 288,
+        "height": 50,
+        "radius": 100,
+        "background": "rgba(255,255,255,.92)",
+        "hoverBackground": "#FFFFFF",
+        "shadow": "shadow.select",
+        "padding": "8px 35px 4px 20px",
+        "text": "typography.select",
+        "chevron": {
+          "size": 7.7,
+          "stroke": "1px #160D3F",
+          "rotation": "-45deg",
+          "right": 25
+        },
+        "options": [
+          "ALL TOURS",
+          "Dinner Cruise",
+          "Snorkeling",
+          "Sunset",
+          "Whale Watching",
+          "SNUBA",
+          "Depart from: Maalaea",
+          "Depart from: Lahaina",
+          "Depart from: Kaanapali",
+          "Lanai Excursions"
+        ],
+        "behaviour": "Filters the cards in place by matching class names. No page reload. Alternating band colours are recalculated for the visible cards.",
+        "otherVariant": "Elsewhere on the site the same select is glass: rgba(255,255,255,.5) with a 10px backdrop blur and white text."
+      },
+      "stickyBar": {
+        "height": 100,
+        "background": "#EAF5F7",
+        "desktop": "Scrolls with the page, then fixes to the top once passed. Shadow shadow.stickyBar, z-index 100.",
+        "mobile": "Fixed to the bottom of the screen from the start.",
+        "contentOnThisPage": "Empty. On the home page the same bar holds Tour, Dates, Who and a Search button.",
+        "checkoutState": {
+          "background": "#160D3F",
+          "text": "#FFFFFF"
+        }
+      },
+      "tourCard": {
+        "pattern": "One tour per full width band. Photo left, text right. No box, no border, no shadow.",
+        "bandBackground": {
+          "odd": "#EAF5F7",
+          "even": "#FFFFFF",
+          "mobile": "All white"
+        },
+        "padding": {
+          "desktop": "80px 0",
+          "mobile": "10px 0 50px"
+        },
+        "grid": {
+          "desktop": {
+            "columns": "1fr 1fr",
+            "gap": 66,
+            "contentWidthEach": 567
+          },
+          "tablet": {
+            "columns": "5 / 7 of 12",
+            "imageWidth": 302,
+            "textWidth": 438,
+            "sidePadding": 20
+          },
+          "mobile": {
+            "columns": "stacked",
+            "image": "full bleed",
+            "textMargin": "36px 20px 20px"
+          }
+        },
+        "image": {
+          "ratio": "16:9",
+          "rendered": {
+            "desktop": "567 x 318",
+            "tablet": "302 x 169",
+            "mobile": "390 x 219"
+          },
+          "source": "854 x 479 JPEG",
+          "maxSize": "580 x 390",
+          "radius": 0,
+          "link": "Whole image links to the tour page",
+          "hover": "none"
+        },
+        "textColumn": {
+          "order": [
+            "eyebrow (left) and duration (right)",
+            "title",
+            "price row",
+            "optional note",
+            "description",
+            "actions"
+          ],
+          "eyebrowOffsetFromImageTop": 16,
+          "verticalRhythm": {
+            "eyebrowToTitle": 22,
+            "titleToPriceRow": 21,
+            "priceRowHeight": 64,
+            "priceRowToDescription": 29,
+            "descriptionToActions": 29
+          },
+          "duration": {
+            "position": "top right, level with the image top",
+            "format": "'8 hr', '5.30 hr', '2 hr'",
+            "style": "typography.meta"
+          }
+        },
+        "titleSplit": {
+          "rule": "Every tour name is split in two. A small qualifier line and a large product line.",
+          "examples": [
+            [
+              "DISCOVER",
+              "LANAI SNORKEL"
+            ],
+            [
+              "LANA'I",
+              "ADVENTURE SNORKEL"
+            ],
+            [
+              "SNORKEL",
+              "TURTLE REEF"
+            ],
+            [
+              "DELUXE KAANAPALI",
+              "SUNSET SAIL"
+            ],
+            [
+              "MAALAEA",
+              "WHALE WATCH"
+            ],
+            [
+              "LAHAINA CAPTAIN'S SUNSET",
+              "DINNER SAIL"
+            ],
+            [
+              "NEW YEAR'S EVE",
+              "FIREWORKS SAIL"
+            ]
+          ]
+        },
+        "heightAt1440": {
+          "min": 486,
+          "max": 538,
+          "driver": "Description length (2 or 3 lines) and the optional note line"
+        }
+      },
+      "priceRow": {
+        "borders": "1px #CBDFE4 top and bottom",
+        "padding": "17px 0 15px",
+        "height": 64,
+        "marginBottom": 20,
+        "layout": {
+          "desktop": "Up to four items in one row, spread across the full text column, 16.5px minimum gap",
+          "mobile": "Stacked, one per line, 30px each"
+        },
+        "items": [
+          "Adult $295",
+          "Youth $265",
+          "Child $199",
+          "Infant free"
+        ],
+        "emphasis": "First item in ink, the rest in muted teal. 'free' in italic.",
+        "variants": {
+          "fourTiers": "Adult, Youth, Child, Infant",
+          "threeTiers": "Adult, Youth, Child",
+          "single": "Adult only (dinner sails, adults only events)"
+        },
+        "currency": "Symbol directly before the number, no decimals",
+        "disclaimer": "'* Prices do not include taxes & fees.' sits in the footer only"
+      },
+      "button": {
+        "shape": {
+          "radius": 100,
+          "border": "none",
+          "shadow": "none"
+        },
+        "sizes": {
+          "default": {
+            "padding": "16px 40px 15px",
+            "height": 47
+          },
+          "smaller": {
+            "padding": "13px 40px 12px",
+            "height": {
+              "desktop": 41,
+              "mobile": 39
+            }
+          }
+        },
+        "variants": {
+          "primary": {
+            "background": "#160D3F",
+            "color": "#FFFFFF",
+            "label": "BOOK NOW",
+            "measuredWidth": {
+              "desktop": 194,
+              "mobile": 180
+            }
+          },
+          "secondary": {
+            "background": "#306F7F",
+            "color": "#FFFFFF",
+            "note": "Defined, not used on this page"
+          },
+          "tertiary": {
+            "background": {
+              "onWhite": "#EAF5F7",
+              "onMist": "#FFFFFF"
+            },
+            "color": "#160D3F",
+            "label": "EXPLORE",
+            "measuredWidth": {
+              "desktop": 171,
+              "mobile": 160
+            }
+          }
+        },
+        "pair": {
+          "gap": 6,
+          "order": "Primary first, tertiary second",
+          "mobile": "Side by side, centred, 4px gap"
+        },
+        "hover": "motion.buttonHover",
+        "text": "typography.button",
+        "opticalNote": "1px more padding on top than bottom because Josefin Sans capitals sit high."
+      },
+      "footer": {
+        "background": "#306F7F",
+        "padding": {
+          "desktop": "50px 33px",
+          "mobile": "50px 21px 100px"
+        },
+        "height": {
+          "desktop": 590,
+          "tablet": 648,
+          "mobile": 1127
+        },
+        "rows": [
+          {
+            "name": "links",
+            "layout": {
+              "desktop": "One row, space between, 9 links",
+              "mobile": "Stacked, centred, about 10px apart"
+            },
+            "style": "typography.footerLink",
+            "marginBottom": {
+              "desktop": 80,
+              "mobile": 40
+            }
+          },
+          {
+            "name": "social",
+            "layout": "5 white icons, max width 680, centred, 1px x 20px dividers between (dividers hidden and icons at 75% on mobile)",
+            "iconHeight": 33,
+            "marginBottom": {
+              "desktop": 68,
+              "mobile": 54
+            }
+          },
+          {
+            "name": "smallPrint",
+            "layout": "Three centred paragraphs, max width 1120",
+            "style": "typography.footerSmall",
+            "content": [
+              "Community and environment pledge",
+              "Wildlife photography guidelines",
+              "Price disclaimer"
+            ]
+          }
+        ],
+        "absent": [
+          "Logo",
+          "Address",
+          "Phone",
+          "Newsletter form",
+          "Copyright line",
+          "Payment icons"
+        ]
+      },
+      "chatButton": {
+        "size": 56,
+        "shape": "circle",
+        "background": "#166D98",
+        "icon": "White speech bubble",
+        "position": {
+          "right": 20,
+          "bottom": 20
+        },
+        "source": "Third party widget"
+      }
+    },
+    "contentModel": {
+      "tour": {
+        "eyebrow": "string, 1 to 3 words",
+        "title": "string, 2 words",
+        "duration": "string",
+        "image": "16:9 landscape",
+        "prices": "list of {label, amount or 'free'}",
+        "note": "optional string",
+        "description": "1 to 2 sentences, often followed by bullet facts in the same line: duration, departure point, upgrade",
+        "filterTags": "list of activity and departure tags",
+        "bookUrl": "tour page with ?action=book",
+        "detailUrl": "tour page"
+      },
+      "descriptionPattern": "Sentence. • 5 hrs • Departs from Maalaea • Snuba upgrade",
+      "tourCount": 18,
+      "sortOrder": "Flagship and highest price first, then by product family: snorkel, sunset and whale, dinner, seasonal, volunteering"
+    },
+    "principles": [
+      "One tour, one band. Nothing competes with the product in view.",
+      "Two colours of interface. Photography supplies the rest.",
+      "Capitals with air. Wide tracking does the work that bold weight usually does.",
+      "Pills for actions, squares for pictures.",
+      "Flat. No card boxes, no shadows, no gradients on content.",
+      "Price is content, not a badge. It sits in the reading flow between two hairlines.",
+      "Two actions per product, always the same two, always in the same order."
+    ],
+    "doNotCopy": [
+      {
+        "issue": "Body copy contrast",
+        "detail": "Muted teal on white is 2.68:1 and on mist 2.42:1. WCAG AA needs 4.5:1."
+      },
+      {
+        "issue": "Footer small print contrast",
+        "detail": "2.58:1."
+      },
+      {
+        "issue": "Empty sticky bar",
+        "detail": "On this page the 100px bar has no content, yet it fixes to the top on desktop and to the bottom on mobile, where it covers a tenth of the screen."
+      },
+      {
+        "issue": "Zoom disabled",
+        "detail": "Viewport meta sets maximum-scale=1 and user-scalable=0."
+      },
+      {
+        "issue": "Images without alt text",
+        "detail": "Card images are injected with no alt attribute."
+      },
+      {
+        "issue": "No book action in the navigation",
+        "detail": "Most strong operator sites keep one visible at all times."
+      },
+      {
+        "issue": "Filter mixes dimensions",
+        "detail": "Activity types and departure points share one list, so they cannot be combined."
+      },
+      {
+        "issue": "Footer links on tablet",
+        "detail": "Nine links stay in one row at 820px and touch each other."
+      },
+      {
+        "issue": "Long page",
+        "detail": "18 cards make the desktop page about 10,400px tall with no way to jump or collapse."
+      },
+      {
+        "issue": "Font weight",
+        "detail": "Buttons and nav ask for Josefin Sans 500, which is not loaded, so the browser substitutes 400."
+      }
+    ]
+  },
+  "baiaAzul": {
+    "note": "My proposal for carrying the reference into Baia Azul with the existing Blue Horizon palette. Nothing here is measured from the source.",
+    "language": "pt-BR",
+    "colorMapping": {
+      "ink": {
+        "reference": "#160D3F",
+        "baiaAzul": "#16344E",
+        "existingVar": "--ink",
+        "contrastOnWhite": 12.84
+      },
+      "band": {
+        "reference": "#EAF5F7",
+        "baiaAzul": "#EAF6FB",
+        "existingVar": "new, lighter than --brand-soft #D9F3FD",
+        "alternative": "#F1E6CC (--cream) for a warmer, sandier look"
+      },
+      "body": {
+        "reference": "#73A6B2",
+        "baiaAzul": "#54718A",
+        "existingVar": "--ink-soft",
+        "contrastOnWhite": 5.11,
+        "contrastOnBand": 4.65,
+        "why": "Fixes the contrast failure of the reference"
+      },
+      "hairline": {
+        "reference": "#CBDFE4",
+        "baiaAzul": "#CFE6F2"
+      },
+      "footer": {
+        "reference": "#306F7F",
+        "baiaAzul": "#004777",
+        "existingVar": "--brand-deep",
+        "whiteContrast": 9.69
+      },
+      "footerSmallPrint": {
+        "reference": "#77B9C9",
+        "baiaAzul": "#A9D4EA",
+        "contrastOnFooter": 6.13
+      },
+      "primaryAction": {
+        "reference": "#160D3F",
+        "baiaAzul": "#0061AA",
+        "existingVar": "--brand",
+        "whiteContrast": 6.38,
+        "alternative": "#16344E for the closest match to the reference"
+      },
+      "tertiaryAction": {
+        "onWhite": "#EAF6FB",
+        "onBand": "#FFFFFF",
+        "text": "#16344E"
+      },
+      "accent": {
+        "baiaAzul": "#E8A33D",
+        "existingVar": "--sand",
+        "use": "At most one small element per screen, for example a 'Mais vendido' tag. The reference has no accent colour."
+      },
+      "heroOverlay": "linear-gradient(to bottom, rgba(22,52,78,.38) 0%, rgba(22,52,78,.22) 50%, rgba(22,52,78,.16) 100%)"
+    },
+    "typography": {
+      "display": "Josefin Sans 400 (add 600 only if a real medium weight is wanted)",
+      "text": "Raleway 500",
+      "portugueseNotes": [
+        "Set line-height of uppercase headings to at least 1.2 so accents on capitals are not clipped.",
+        "Tracking of 3.5px makes long Portuguese names wrap. Cap titles at about 22 characters or drop tracking to 2.5px on mobile.",
+        "Body copy at 16px minimum instead of 14px."
+      ],
+      "cssImport": "https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Raleway:ital,wght@0,500;1,500&display=swap"
+    },
+    "copy": {
+      "hero": {
+        "eyebrow": "SALVADOR, BAHIA",
+        "title": "NOSSOS PASSEIOS"
+      },
+      "filter": [
+        "TODOS OS PASSEIOS",
+        "Ilhas",
+        "Praias",
+        "Cultura",
+        "Transfers",
+        "Saida: Salvador",
+        "Saida: Morro de Sao Paulo"
+      ],
+      "buttons": {
+        "primary": "RESERVAR",
+        "tertiary": "VER DETALHES"
+      },
+      "priceLabels": [
+        "Adulto",
+        "Crianca",
+        "Colo gratis"
+      ],
+      "disclaimer": "Valores por pessoa. Taxas de embarque nao incluidas."
+    },
+    "tourCardExamples": [
+      {
+        "eyebrow": "VOLTA AS ILHAS",
+        "title": "TINHARE",
+        "duration": "7h30",
+        "prices": [
+          {
+            "label": "Adulto",
+            "amount": "R$ 350"
+          }
+        ],
+        "description": "Saida de Morro de Sao Paulo. • 09h30 as 17h00"
+      },
+      {
+        "eyebrow": "DAY USE",
+        "title": "MORRO DE SAO PAULO",
+        "duration": "dia inteiro",
+        "prices": [
+          {
+            "label": "Adulto",
+            "amount": "R$ 290"
+          }
+        ],
+        "description": "Catamara saindo de Salvador. • Travessia de cerca de 3h"
+      },
+      {
+        "eyebrow": "ESCUNA",
+        "title": "FRADES + ITAPARICA",
+        "duration": "dia inteiro",
+        "prices": [
+          {
+            "label": "Adulto",
+            "amount": "R$ 140"
+          }
+        ],
+        "description": "Passeio pela Baia de Todos os Santos. • 2h em cada ilha"
+      },
+      {
+        "eyebrow": "LITORAL NORTE",
+        "title": "PRAIA DO FORTE",
+        "duration": "8h",
+        "prices": [
+          {
+            "label": "Adulto",
+            "amount": "R$ 140"
+          }
+        ],
+        "description": "Com Guarajuba e parada no Projeto Tamar. • 09h as 17h"
+      },
+      {
+        "eyebrow": "DAY USE",
+        "title": "VILLAGE ITAPARICA",
+        "duration": "dia inteiro",
+        "prices": [
+          {
+            "label": "Adulto",
+            "amount": "R$ 140"
+          }
+        ],
+        "description": "Piscinas, praia e almoco."
+      },
+      {
+        "eyebrow": "CITY TOUR",
+        "title": "SALVADOR",
+        "duration": "sob consulta",
+        "prices": [
+          {
+            "label": "Valor",
+            "amount": "Consulte"
+          }
+        ],
+        "description": "Pelourinho, Elevador Lacerda, Bonfim e Farol da Barra."
+      }
+    ],
+    "tourCardNote": "Tour names and prices are taken from the current Baia Azul landing page. Accents are left out of this JSON for safe parsing and belong in the real copy. Durations marked 'dia inteiro' or 'sob consulta' are placeholders to confirm.",
+    "improvementsOverReference": [
+      "Body text colour that passes WCAG AA.",
+      "A 'RESERVAR' pill in the navigation, visible at all times.",
+      "Sticky bar only when it has content: selected tour, date, people, WhatsApp.",
+      "WhatsApp as a third, lighter action on mobile.",
+      "Two filters instead of one: type of passeio and departure point.",
+      "Zoom allowed, alt text on every photo, visible focus rings.",
+      "Footer with address, phone, WhatsApp, CNPJ and Cadastur number, which Brazilian visitors look for."
+    ],
+    "cssVariables": {
+      "--ba-ink": "#16344E",
+      "--ba-ink-soft": "#54718A",
+      "--ba-brand": "#0061AA",
+      "--ba-brand-deep": "#004777",
+      "--ba-band": "#EAF6FB",
+      "--ba-hairline": "#CFE6F2",
+      "--ba-sand": "#E8A33D",
+      "--ba-white": "#FFFFFF",
+      "--ba-font-display": "'Josefin Sans', 'Century Gothic', Futura, sans-serif",
+      "--ba-font-text": "'Raleway', 'Helvetica Neue', Arial, sans-serif",
+      "--ba-radius-pill": "100px",
+      "--ba-container": "1200px",
+      "--ba-gutter": "66px",
+      "--ba-band-pad": "80px",
+      "--ba-hero-h": "600px",
+      "--ba-ease": "200ms ease-in-out",
+      "--ba-shadow-float": "0 1px 8px 0 rgba(22,52,78,.15)"
+    }
+  }
+}
