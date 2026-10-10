@@ -26,7 +26,7 @@ SITE = {
                    "Morro de São Paulo, Boipeba, Ilha dos Frades, Itaparica e Praia do Forte, com saídas todos os dias.",
     "neighbourhood": "Pelourinho, Centro Histórico",
     "city": "Salvador, Bahia",
-    "hours": "Todos os dias, das 7h às 22h",
+    "hours": "",                # opening hours, for example "Segunda a sábado, das 8h às 18h"
     "map_url": "https://www.google.com/maps/search/?api=1&query=Pelourinho%2C+Salvador+-+BA",
 
     # WhatsApp number in international format, digits only, for example "5571999990000".
@@ -503,8 +503,6 @@ FAQ = [
           "chega pronta para a nossa equipe. Confirmamos a disponibilidade, o horário e o ponto de encontro."]),
         ("Quais são as formas de pagamento?",
          ["Cartão de crédito e de débito, de todas as bandeiras, PIX e transferência bancária."]),
-        ("Qual é o horário de atendimento?",
-         ["Todos os dias, inclusive domingos e feriados, das 7h às 22h."]),
     ]),
 ]
 

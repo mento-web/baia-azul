@@ -36,7 +36,7 @@ PHOTOS = {
     "praia-do-forte":     ("File:Praia do Forte - Roberta Mendes de Sá(1).jpg", .5, .55, "Maré baixa em frente à igreja da Praia do Forte"),
     "village-itaparica":  ("File:Praia Barra do Gil na Ilha de Itaparica.JPG", .5, .6, "Praia na Ilha de Itaparica"),
     "garapua":            ("File:Garapuá Foto Tatiana Azeviche (31021819287).jpg", .5, .55, "Coqueiros na praia de Garapuá"),
-    "quadriciclo":        ("File:Quad Bike, Xai Xai.jpg", .5, .6, "Quadriciclo na areia, à beira do mar"),
+    "quadriciclo":        ("File:Garapuá Foto Tatiana Azeviche (45960952171).jpg", .5, .6, "Maré baixa na praia de Garapuá, destino do passeio de quadriciclo"),
     "gamboa":             ("File:Praia da Argila.jpg", .5, .45, "Falésia de argila na Praia da Gamboa"),
     "boipeba":            ("File:MARCIO FILHO BOCA DA BARRA BOIPEBA BAHIA (39166727470).jpg", .5, .5, "Vista aérea da Boca da Barra, na Ilha de Boipeba"),
     "morere":             ("File:Praia Moreré-4 (51019497281).jpg", .5, .5, "Coqueiros na praia de Moreré, em Boipeba"),

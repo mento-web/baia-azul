@@ -220,7 +220,9 @@ def booking_dialog():
 
 def footer(root):
     facts = [f"<span>{e(SITE['street'] + ', ' if SITE['street'] else '')}{e(SITE['neighbourhood'])}<br>{e(SITE['city'])}</span>",
-             f"<span>{e(SITE['hours'])}</span>"]
+             ]
+    if SITE["hours"]:
+        facts.append(f"<span>{e(SITE['hours'])}</span>")
     contact = [f'<a href="{whatsapp("Olá! Quero falar com a Baía Azul.")}" target="_blank" rel="noopener">'
                f'{e(SITE["whatsapp_display"]) if SITE["whatsapp_display"] else "Atendimento pelo WhatsApp"}</a>']
     if SITE["email"]:
@@ -396,14 +398,14 @@ def page_home():
     </div>
   </div>
 </section>
-{closing(root, "Todos os dias, das 7h às 22h", "Vamos montar a sua viagem", "Conte para onde quer ir e em que data. Respondemos pelo WhatsApp com disponibilidade, horário e ponto de encontro. Pagamento por cartão, PIX ou transferência.", tint=False)}"""
+{closing(root, "Reserva pelo WhatsApp", "Vamos montar a sua viagem", "Conte para onde quer ir e em que data. Respondemos pelo WhatsApp com disponibilidade, horário e ponto de encontro. Pagamento por cartão, PIX ou transferência.", tint=False)}"""
 
     schema = {
         "@context": "https://schema.org", "@type": "TravelAgency", "name": SITE["name"],
         "description": SITE["description"],
         "address": {"@type": "PostalAddress", "addressLocality": "Salvador", "addressRegion": "BA", "addressCountry": "BR",
                     "streetAddress": (SITE["street"] + ", " if SITE["street"] else "") + SITE["neighbourhood"]},
-        "openingHours": "Mo-Su 07:00-22:00", "areaServed": "Bahia", "paymentAccepted": "Cartão de crédito, cartão de débito, PIX, transferência bancária",
+        "areaServed": "Bahia", "paymentAccepted": "Cartão de crédito, cartão de débito, PIX, transferência bancária",
     }
     if SITE["url"]:
         schema["url"] = SITE["url"]
@@ -463,7 +465,7 @@ def page_passeio(p, index):
 </section>
 <div class="visually-hidden"><h2>Próximo passeio</h2></div>
 {tour_band(root, 0 if not p['steps'] else 1, nxt, "passeio").replace('<h2 class="title">', '<h3 class="title">').replace('</a></h2>', '</a></h3>')}
-{closing(root, SITE["hours"], "Reserve pelo WhatsApp", "Escolha a data e o número de pessoas. A mensagem chega pronta e respondemos com a confirmação.", p["name"], tint=bool(p['steps']))}"""
+{closing(root, "Pronto para ir?", "Reserve pelo WhatsApp", "Escolha a data e o número de pessoas. A mensagem chega pronta e respondemos com a confirmação.", p["name"], tint=bool(p['steps']))}"""
 
     schema = {"@context": "https://schema.org", "@type": "TouristTrip", "name": p["name"], "description": p["lede"],
               "provider": {"@type": "TravelAgency", "name": SITE["name"]}}
@@ -527,7 +529,7 @@ def page_transfers():
     </div>
   </div>
 </section>
-{closing(root, SITE["hours"], "Reserve o seu transfer", "Informe a data, o número de pessoas e de onde você sai. Se vier de avião, mande também o horário do voo.", "", tint=True)}"""
+{closing(root, "Todos os dias do ano", "Reserve o seu transfer", "Informe a data, o número de pessoas e de onde você sai. Se vier de avião, mande também o horário do voo.", "", tint=True)}"""
     return page("Transfers para Morro de São Paulo e Boipeba",
                 "Transfer diário de Salvador para Morro de São Paulo e Boipeba, com busca no aeroporto, no hotel ou no Terminal Marítimo. Horários e transfer privativo.",
                 root, "transfers.html", "transfers", body, image="baia")
@@ -536,7 +538,9 @@ def page_transfers():
 def page_sobre():
     root = ""
     address = (SITE["street"] + ", " if SITE["street"] else "") + SITE["neighbourhood"] + ", " + SITE["city"]
-    contact_rows = [("Onde", address), ("Atendimento", SITE["hours"])]
+    contact_rows = [("Onde", address)]
+    if SITE["hours"]:
+        contact_rows.append(("Atendimento", SITE["hours"]))
     if SITE["whatsapp_display"]:
         contact_rows.append(("WhatsApp", SITE["whatsapp_display"]))
     if SITE["email"]:
@@ -586,7 +590,7 @@ def page_sobre():
       <p class="eyebrow">Contato</p>
       <h2 class="title">Onde estamos</h2>
       <p>A nossa base fica no Pelourinho, no coração do Centro Histórico de Salvador, a poucos minutos do Elevador Lacerda e do Terminal Marítimo, de onde partem os barcos.</p>
-      <p>O jeito mais rápido de falar com a gente é o WhatsApp. Respondemos todos os dias, inclusive domingos e feriados, das 7h às 22h.</p>
+      <p>O jeito mais rápido de falar com a gente é o WhatsApp. É por lá que tiramos dúvidas, enviamos valores e confirmamos as reservas.</p>
       <div class="actions">
         <a class="btn btn--primary" href="{whatsapp('Olá! Quero falar com a Baía Azul.')}" target="_blank" rel="noopener">Chamar no WhatsApp</a>
         <a class="btn btn--tertiary" href="{SITE['map_url']}" target="_blank" rel="noopener">Ver no mapa</a>
@@ -631,7 +635,7 @@ def page_duvidas():
     <div>{cancel_rows()}</div>
   </div>
 </section>
-{closing(root, "Não achou a resposta?", "Pergunte para a gente", "Atendemos pelo WhatsApp todos os dias, das 7h às 22h.", "", tint=False, second=("Ver passeios", f"{root}index.html#passeios"))}"""
+{closing(root, "Não achou a resposta?", "Pergunte para a gente", "Chame no WhatsApp e a nossa equipe responde com o que você precisa saber.", "", tint=False, second=("Ver passeios", f"{root}index.html#passeios"))}"""
 
     schema = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": " ".join(a)}}
